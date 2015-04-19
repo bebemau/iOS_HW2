@@ -39,9 +39,9 @@
 }
 
 - (void) displayColor: (UIColor*)colorSelected{
-    ColorDisplayViewController *modalVC = [[ColorDisplayViewController alloc] init];
-    modalVC.displayColor = colorSelected;
-    [self presentViewController:modalVC animated:YES completion:nil];
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ColorDisplayVC"];
+    ((ColorDisplayViewController*)vc).displayColor = colorSelected;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
