@@ -20,10 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.ColorCount = [[NSDictionary alloc]init];
     
-    
+    self.ColorCount = [[NSMutableDictionary alloc]initWithCapacity:5];
+    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Red"];
+    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Green"];
+    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Blue"];
+    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Custom"];
+    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Random"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +50,10 @@
 - (void) displayColor: (UIColor*)colorSelected{
     UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ColorDisplayVC"];
     ((ColorDisplayViewController*)vc).displayColor = colorSelected;
+    
+    int count = [[self.ColorCount objectForKey:@"Red"] intValue];
+    ((ColorDisplayViewController*)vc).displayCount = count;
+    
     [self presentViewController:vc animated:YES completion:nil];
 }
 

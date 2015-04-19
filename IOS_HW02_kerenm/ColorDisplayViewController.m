@@ -9,6 +9,7 @@
 #import "ColorDisplayViewController.h"
 
 @interface ColorDisplayViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lblDisplayCount;
 
 @end
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = _displayColor;
+    self.lblDisplayCount.text = [NSString stringWithFormat:@"Presented %i times", self.displayCount];
 }
 
 - (void)didReceiveMemoryWarning {

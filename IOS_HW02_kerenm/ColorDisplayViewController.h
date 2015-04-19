@@ -10,4 +10,5 @@
 
 @interface ColorDisplayViewController : UIViewController
 @property (nonatomic, copy) UIColor *displayColor;
+@property (nonatomic) int displayCount;
 @end

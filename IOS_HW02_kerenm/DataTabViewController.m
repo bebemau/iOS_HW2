@@ -9,6 +9,7 @@
 #import "DataTabViewController.h"
 
 @interface DataTabViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tblData;
 
 @end
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
