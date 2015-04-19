@@ -27,21 +27,21 @@
 
 
 - (IBAction)btnRed_Clicked:(id)sender {
+    [self displayColor: [UIColor redColor]];
+}
+
+- (IBAction)btnGreen_Clicked:(id)sender {
+    [self displayColor: [UIColor greenColor] ];
+}
+
+- (IBAction)btnBlue_Clicked:(id)sender {
+    [self displayColor: [UIColor blueColor] ];
+}
+
+- (void) displayColor: (UIColor*)colorSelected{
     ColorDisplayViewController *modalVC = [[ColorDisplayViewController alloc] init];
-    modalVC.displayColor = @"red";
+    modalVC.displayColor = colorSelected;
     [self presentViewController:modalVC animated:YES completion:nil];
-
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

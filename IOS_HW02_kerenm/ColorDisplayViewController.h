@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ColorDisplayViewController : UIViewController
-@property (nonatomic, copy) NSString *displayColor;
+@property (nonatomic, copy) UIColor *displayColor;
 @end
